@@ -54,7 +54,7 @@
             columns: [
                 {data: 'id'},
                 {data: 'title'},
-                {data: 'user.name', name: 'user.name'},
+                {data: 'user.name'},
                 {data: 'created_at'},
                 {data: 'updated_at'},
                 {data: 'action', orderable: false, searchable: false}
