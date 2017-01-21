@@ -28,12 +28,6 @@ class HasOneController extends Controller
     {
         $query = User::with('post')->select('users.*');
 
-        return $datatables->eloquent($query)
-                          ->addColumn('title', function (User $user) {
-                              return $user->blogs->map(function ($blog) {
-                                  return str_limit($blog->title, 30, '...');
-                              })->implode('<br>');
-                          })
-                          ->make(true);
+        return $datatables->eloquent($query)->make(true);
     }
 }
