@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use App\User;
 use Yajra\Datatables\Datatables;
 
-class ArrayResponseController extends Controller
+class ObjectResponseController extends Controller
 {
     /**
      * Display index page.
@@ -15,7 +15,7 @@ class ArrayResponseController extends Controller
      */
     public function index()
     {
-        return view('eloquent.array');
+        return view('eloquent.object');
     }
 
     /**
@@ -26,8 +26,8 @@ class ArrayResponseController extends Controller
      */
     public function data(Datatables $datatables)
     {
-        return $datatables->eloquent(User::select('id', 'name', 'email', 'created_at', 'updated_at'))
+        return $datatables->eloquent(User::query())
                           ->addColumn('action', 'eloquent.tables.users-action')
-                          ->make();
+                          ->make(true);
     }
 }

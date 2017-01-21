@@ -19,11 +19,14 @@
             'csrfToken' => csrf_token(),
         ]) !!};
     </script>
+    @stack('styles')
 </head>
 <body>
     <div id="app">
         @include('layouts.partials.nav')
-        @yield('content')
+        <div class="container">
+            @yield('content')
+        </div>
     </div>
 
     <!-- Scripts -->

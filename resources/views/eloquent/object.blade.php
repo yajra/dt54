@@ -5,7 +5,7 @@
 @endsection
 
 @section('title')
-    <title>Eloquent DataTable with Array Response</title>
+    <title>Eloquent DataTable with Object Response</title>
 @endsection
 
 @section('content')
@@ -32,14 +32,14 @@
         </div>
         <div class="tab-pane fade" id="php">
             <h2>Routes</h2>
-            <pre><code class="php">{{ file_get_contents(base_path('routes/eloquent/array.php')) }}</code></pre>
+            <pre><code class="php">{{ file_get_contents(base_path('routes/eloquent/object.php')) }}</code></pre>
 
             <h2>Controller</h2>
-            <pre><code class="php">{{ file_get_contents(app_path('Http/Controllers/Eloquent/ArrayResponseController.php')) }}</code></pre>
+            <pre><code class="php">{{ file_get_contents(app_path('Http/Controllers/Eloquent/ObjectResponseController.php')) }}</code></pre>
         </div>
         <div class="tab-pane fade" id="js">
             <h2>JS</h2>
-            <pre><code id="js-container" class="js"></code></pre>
+            <pre><code id="js-container" class="javascript"></code></pre>
         </div>
     </div>
 @endsection
@@ -50,7 +50,15 @@
         $('#users-table').DataTable({
             serverSide: true,
             processing: true,
-            ajax: '/eloquent/array-data'
+            ajax: '/eloquent/object-data',
+            columns: [
+                {data: 'id'},
+                {data: 'name'},
+                {data: 'email'},
+                {data: 'created_at'},
+                {data: 'updated_at'},
+                {data: 'action', orderable: false, searchable: false}
+            ]
         });
     });
 </script>

@@ -3,10 +3,11 @@
 namespace App\Http\Controllers\Eloquent;
 
 use App\Http\Controllers\Controller;
+use App\Post;
 use App\User;
 use Yajra\Datatables\Datatables;
 
-class ArrayResponseController extends Controller
+class BelongsToController extends Controller
 {
     /**
      * Display index page.
@@ -15,7 +16,7 @@ class ArrayResponseController extends Controller
      */
     public function index()
     {
-        return view('eloquent.array');
+        return view('eloquent.belongs-to');
     }
 
     /**
@@ -26,8 +27,8 @@ class ArrayResponseController extends Controller
      */
     public function data(Datatables $datatables)
     {
-        return $datatables->eloquent(User::select('id', 'name', 'email', 'created_at', 'updated_at'))
-                          ->addColumn('action', 'eloquent.tables.users-action')
-                          ->make();
+        return $datatables->eloquent(Post::with('user')->select('posts.*'))
+                          ->addColumn('action', 'eloquent.tables.posts-action')
+                          ->make(true);
     }
 }
