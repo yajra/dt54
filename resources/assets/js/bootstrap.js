@@ -34,10 +34,12 @@ window.axios.defaults.headers.common = {
 /**
  * Require datatables library
  */
-// require('datatables.net');
-// require('datatables.net-bs');
-// require('datatables.net-buttons');
-// require('datatables.net-buttons-bs');
+require('datatables.net');
+require('datatables.net-bs');
+require('datatables.net-buttons');
+require('datatables.net-buttons-bs');
+
+window.moment = require('moment');
 
 /**
  * Echo exposes an expressive API for subscribing to channels and listening

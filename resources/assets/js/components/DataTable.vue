@@ -79,7 +79,7 @@
                       vm.$emit('state-save-params', ...args);
                    }
                };
-                return $.extend(true, $.fn.dataTable.defaults, {
+                return $.extend(true, {
                         serverSide: true,
                         processing: true
                    },
