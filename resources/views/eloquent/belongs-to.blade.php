@@ -22,7 +22,7 @@
             <h2>Eloquent DataTable with Belongs To</h2>
             <div class="panel panel-default">
                 <div class="panel-body">
-                    @include('eloquent.tables.users')
+                    @include('eloquent.tables.posts')
                 </div>
             </div>
         </div>
@@ -47,7 +47,7 @@
 @push('scripts')
 <script id="script">
     $(function () {
-        $('#users-table').DataTable({
+        $('#posts-table').DataTable({
             serverSide: true,
             processing: true,
             ajax: '/eloquent/belongs-to-data',
