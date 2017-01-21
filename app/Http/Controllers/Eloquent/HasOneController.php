@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Eloquent;
 
 use App\Http\Controllers\Controller;
+use App\Post;
 use App\User;
 use Yajra\Datatables\Datatables;
 
@@ -28,6 +29,10 @@ class HasOneController extends Controller
     {
         $query = User::with('post')->select('users.*');
 
-        return $datatables->eloquent($query)->make(true);
+        return $datatables->eloquent($query)
+                          ->addColumn('title', function (User $user) {
+                              return $user->post ? $user->post->title : '';
+                          })
+                          ->make(true);
     }
 }

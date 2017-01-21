@@ -55,7 +55,7 @@
                 {data: 'id'},
                 {data: 'name'},
                 {data: 'email'},
-                {data: 'post.title'},
+                {data: 'title', name: 'post.title'},
             ]
         });
     });
