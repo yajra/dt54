@@ -66,6 +66,7 @@
             </div>
 
             <div class="links">
+                <a href="/">Back to Homepage</a>
                 <a href="https://yajrabox.com/docs/laravel-datatables/master">Documentation</a>
                 <a href="https://laravel.com/docs">Laravel</a>
                 <a href="https://datatables.net">DataTables.net</a>
