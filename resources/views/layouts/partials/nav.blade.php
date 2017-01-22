@@ -22,6 +22,7 @@
                 <li><a href="/eloquent">Eloquent</a></li>
                 <li><a href="/query">Query Builder</a></li>
                 <li><a href="/collection">Collection</a></li>
+                <li><a href="/buttons/eloquent">Buttons Plugin</a></li>
             </ul>
 
             <!-- Right Side Of Navbar -->

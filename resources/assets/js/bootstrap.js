@@ -38,6 +38,7 @@ require('datatables.net');
 require('datatables.net-bs');
 require('datatables.net-buttons');
 require('datatables.net-buttons-bs');
+require('./plugins/buttons.server-side');
 
 window.moment = require('moment');
 

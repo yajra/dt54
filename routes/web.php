@@ -27,7 +27,10 @@ Route::get('/users', function () {
 
 Route::get('eloquent', 'EloquentController@index');
 Route::get('eloquent/users-data', 'EloquentController@usersData');
-foreach(Finder::create()->in(__DIR__.'/eloquent')->files() as $file) {
+foreach(Finder::create()->in([
+    __DIR__.'/eloquent',
+    __DIR__.'/buttons',
+])->files() as $file) {
     require $file->getPathname();
 }
 Route::get('eloquent/{view}', 'EloquentController@display');
