@@ -16,7 +16,7 @@ class UsersDataTable extends DataTable
     {
         return $this->datatables
             ->eloquent($this->query())
-            ->addColumn('action', 'path.to.action.view')
+            ->addColumn('action', 'eloquent.tables.users-action')
             ->make(true);
     }
 
@@ -55,7 +55,8 @@ class UsersDataTable extends DataTable
     {
         return [
             'id',
-            // add your columns
+            'name',
+            'email',
             'created_at',
             'updated_at',
         ];
@@ -68,6 +69,6 @@ class UsersDataTable extends DataTable
      */
     protected function filename()
     {
-        return 'usersdatatables_' . time();
+        return 'users_' . time();
     }
 }

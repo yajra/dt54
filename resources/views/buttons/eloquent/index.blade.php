@@ -37,6 +37,9 @@
 
             <h2>Controller</h2>
             <pre><code class="php">{{ file_get_contents(app_path('Http/Controllers/Buttons/EloquentController.php')) }}</code></pre>
+
+            <h2>DataTable</h2>
+            <pre><code class="php">{{ file_get_contents(app_path('DataTables/UsersDataTable.php')) }}</code></pre>
         </div>
         <div class="tab-pane fade" id="js">
             <h2>JS</h2>
