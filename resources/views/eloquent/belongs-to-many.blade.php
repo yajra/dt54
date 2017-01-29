@@ -35,7 +35,7 @@
             <pre><code class="php">{{ file_get_contents(base_path('routes/eloquent/belongs-to-many.php')) }}</code></pre>
 
             <h2>Controller</h2>
-            <pre><code class="php">{{ file_get_contents(app_path('Http/Controllers/Eloquent/BelongsToController.php')) }}</code></pre>
+            <pre><code class="php">{{ file_get_contents(app_path('Http/Controllers/Eloquent/BelongsToManyController.php')) }}</code></pre>
         </div>
         <div class="tab-pane fade" id="js">
             <h2>JS</h2>

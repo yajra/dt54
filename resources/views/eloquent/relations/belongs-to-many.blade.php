@@ -5,7 +5,7 @@
 @endsection
 
 @section('title')
-    <title>Eloquent DataTable with Belongs To</title>
+    <title>Eloquent Relation DataTable with Belongs To Many</title>
 @endsection
 
 @section('content')
@@ -19,23 +19,23 @@
     <!-- TAB CONTENT -->
     <div class="tab-content">
         <div class="active tab-pane fade in" id="demo">
-            <h2>Eloquent DataTable with Belongs To</h2>
+            <h2>Eloquent DataTable with Belongs To Many</h2>
             <div class="panel panel-default">
                 <div class="panel-body">
-                    @include('eloquent.tables.posts-with-author')
+                    @include('eloquent.tables.posts')
                 </div>
             </div>
         </div>
         <div class="tab-pane fade" id="html">
             <h2>HTML</h2>
-            <pre><code class="html">{{ file_get_contents(base_path('resources/views/eloquent/tables/posts-with-author.blade.php')) }}</code></pre>
+            <pre><code class="html">{{ file_get_contents(base_path('resources/views/eloquent/tables/posts.blade.php')) }}</code></pre>
         </div>
         <div class="tab-pane fade" id="php">
             <h2>Routes</h2>
-            <pre><code class="php">{{ file_get_contents(base_path('routes/eloquent/belongs-to.php')) }}</code></pre>
+            <pre><code class="php">{{ file_get_contents(base_path('routes/eloquent/relations/belongs-to-many.php')) }}</code></pre>
 
             <h2>Controller</h2>
-            <pre><code class="php">{{ file_get_contents(app_path('Http/Controllers/Eloquent/BelongsToController.php')) }}</code></pre>
+            <pre><code class="php">{{ file_get_contents(app_path('Http/Controllers/Eloquent/Relations/BelongsToManyController.php')) }}</code></pre>
         </div>
         <div class="tab-pane fade" id="js">
             <h2>JS</h2>
@@ -50,14 +50,13 @@
         $('#posts-table').DataTable({
             serverSide: true,
             processing: true,
-            ajax: '/eloquent/belongs-to-data',
+            ajax: '/eloquent/relations/belongs-to-many-data',
             columns: [
                 {data: 'id'},
                 {data: 'title'},
-                {data: 'user.name'},
                 {data: 'created_at'},
                 {data: 'updated_at'},
-                {data: 'action', orderable: false, searchable: false}
+                {data: 'action', orderable: false, searchable: false},
             ]
         });
     });
