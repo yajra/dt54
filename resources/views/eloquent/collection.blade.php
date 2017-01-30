@@ -5,7 +5,7 @@
 @endsection
 
 @section('title')
-    <title>Eloquent DataTable with Object Response</title>
+    <title>Eloquent Collection DataTable</title>
 @endsection
 
 @section('content')
@@ -19,7 +19,7 @@
     <!-- TAB CONTENT -->
     <div class="tab-content">
         <div class="active tab-pane fade in" id="demo">
-            <h2>Eloquent DataTable with Object Response</h2>
+            <h2>Eloquent Collection DataTable</h2>
             <div class="panel panel-default">
                 <div class="panel-body">
                     @include('eloquent.tables.users')
@@ -32,10 +32,10 @@
         </div>
         <div class="tab-pane fade" id="php">
             <h2>Routes</h2>
-            <pre><code class="php">{{ file_get_contents(base_path('routes/eloquent/object.php')) }}</code></pre>
+            <pre><code class="php">{{ file_get_contents(base_path('routes/eloquent/collection.php')) }}</code></pre>
 
             <h2>Controller</h2>
-            <pre><code class="php">{{ file_get_contents(app_path('Http/Controllers/Eloquent/ObjectResponseController.php')) }}</code></pre>
+            <pre><code class="php">{{ file_get_contents(app_path('Http/Controllers/Eloquent/CollectionController.php')) }}</code></pre>
         </div>
         <div class="tab-pane fade" id="js">
             <h2>JS</h2>
@@ -50,7 +50,7 @@
         $('#users-table').DataTable({
             serverSide: true,
             processing: true,
-            ajax: '/eloquent/object-data',
+            ajax: '/eloquent/collection-data',
             columns: [
                 {data: 'id'},
                 {data: 'name'},
