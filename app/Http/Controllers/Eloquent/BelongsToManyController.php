@@ -36,6 +36,7 @@ class BelongsToManyController extends Controller
                                   return str_limit($blog->title, 30, '...');
                               })->implode('<br>');
                           })
+                          ->rawColumns(['title', 'action'])
                           ->make(true);
     }
 }
