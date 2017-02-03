@@ -3,8 +3,10 @@
 <li class="list-group-item"><a href="/eloquent/object">Object Response</a></li>
 <li class="list-group-item-heading"><h4>Collection</h4></li>
 <li class="list-group-item"><a href="/eloquent/collection">Eloquent Collection</a></li>
+<li class="list-group-item-heading"><h4>Transformer</h4></li>
+zli class="list-group-item"><a href="/eloquent/transformer">Eloquent with Transformer</a></li>
 <li class="list-group-item-heading"><h4>Relations</h4></li>
-<li class="list-group-item"><a href="/eloquent/relations/belongs-to-many">Belongs To Many</a></li>
+z<li class="list-group-item"><a href="/eloquent/relations/belongs-to-many">Belongs To Many</a></li>
 <li class="list-group-item-heading"><h4>Eager Loading</h4></li>
 <li class="list-group-item"><a href="/eloquent/belongs-to">Belongs To</a></li>
 <li class="list-group-item"><a href="/eloquent/belongs-to-many">Belongs To Many</a></li>
