@@ -3,10 +3,10 @@
 namespace App\Http\Controllers\Eloquent;
 
 use App\Http\Controllers\Controller;
-use App\User;
+use App\Post;
 use Yajra\Datatables\Datatables;
 
-class HasOneController extends Controller
+class MorphToManyController extends Controller
 {
     /**
      * Display index page.
@@ -15,7 +15,7 @@ class HasOneController extends Controller
      */
     public function index()
     {
-        return view('eloquent.has-one');
+        return view('eloquent.morph-to-many');
     }
 
     /**
@@ -26,13 +26,13 @@ class HasOneController extends Controller
      */
     public function data(Datatables $datatables)
     {
-        $query = User::with('post')->select('users.*')
-                     ->where('users.id', '>', 10);
+        $query = Post::with('tags')->select('posts.*');
 
         return $datatables->eloquent($query)
-                          ->addColumn('title', function (User $user) {
-                              return $user->post ? $user->post->title : '';
+                          ->addColumn('tags', function (Post $post) {
+                              return $post->tags->pluck('name')->implode('<br>');
                           })
+                          ->rawColumns(['tags'])
                           ->make(true);
     }
 }

@@ -52,10 +52,10 @@
             processing: true,
             ajax: '/eloquent/has-one-data',
             columns: [
-                {data: 'id'},
-                {data: 'name'},
-                {data: 'email'},
-                {data: 'title', name: 'post.title'},
+                {data: 'id', name: 'users.id'},
+                {data: 'name', name: 'users.name'},
+                {data: 'email', name: 'users.email'},
+                {data: 'title', name: 'post.title'}
             ]
         });
     });

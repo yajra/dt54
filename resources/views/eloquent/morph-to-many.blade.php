@@ -5,7 +5,7 @@
 @endsection
 
 @section('title')
-    <title>Eloquent DataTable with Belongs To Many</title>
+    <title>Eloquent DataTable with Morph To Many</title>
 @endsection
 
 @section('content')
@@ -19,23 +19,23 @@
     <!-- TAB CONTENT -->
     <div class="tab-content">
         <div class="active tab-pane fade in" id="demo">
-            <h2>Eloquent DataTable with Belongs To Many</h2>
+            <h2>Eloquent DataTable with Morph To Many</h2>
             <div class="panel panel-default">
                 <div class="panel-body">
-                    @include('eloquent.tables.user-posts')
+                    @include('eloquent.tables.posts-tags')
                 </div>
             </div>
         </div>
         <div class="tab-pane fade" id="html">
             <h2>HTML</h2>
-            <pre><code class="html">{{ file_get_contents(base_path('resources/views/eloquent/tables/user-posts.blade.php')) }}</code></pre>
+            <pre><code class="html">{{ file_get_contents(base_path('resources/views/eloquent/tables/posts-tags.blade.php')) }}</code></pre>
         </div>
         <div class="tab-pane fade" id="php">
             <h2>Routes</h2>
-            <pre><code class="php">{{ file_get_contents(base_path('routes/eloquent/belongs-to-many.php')) }}</code></pre>
+            <pre><code class="php">{{ file_get_contents(base_path('routes/eloquent/morph-to-many.php')) }}</code></pre>
 
             <h2>Controller</h2>
-            <pre><code class="php">{{ file_get_contents(app_path('Http/Controllers/Eloquent/BelongsToManyController.php')) }}</code></pre>
+            <pre><code class="php">{{ file_get_contents(app_path('Http/Controllers/Eloquent/MorphToManyController.php')) }}</code></pre>
         </div>
         <div class="tab-pane fade" id="js">
             <h2>JS</h2>
@@ -47,15 +47,14 @@
 @push('scripts')
 <script id="script">
     $(function () {
-        $('#user-posts-table').DataTable({
+        $('#posts-tags-table').DataTable({
             serverSide: true,
             processing: true,
-            ajax: '/eloquent/belongs-to-many-data',
+            ajax: '/eloquent/morph-to-many-data',
             columns: [
-                {data: 'id', name: 'users.id'},
-                {data: 'name', name: 'users.name'},
-                {data: 'email', name: 'users.email'},
-                {data: 'title', name: 'blogs.title'},
+                {data: 'id', name: 'posts.id'},
+                {data: 'title', name: 'posts.title'},
+                {data: 'tags', name: 'tags.name'}
             ]
         });
     });
