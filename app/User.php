@@ -44,7 +44,7 @@ class User extends Authenticatable
      */
     public function post()
     {
-        return $this->hasOne(Post::class)->where('posts.id', '>', 10);
+        return $this->hasOne(Post::class)->whereBetween('posts.id', [10,100]);
     }
 
     /**

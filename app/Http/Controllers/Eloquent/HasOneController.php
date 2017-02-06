@@ -26,8 +26,7 @@ class HasOneController extends Controller
      */
     public function data(Datatables $datatables)
     {
-        $query = User::with('post')->select('users.*')
-                     ->where('users.id', '>', 10);
+        $query = User::with('post')->select('users.*')->whereBetween('users.id', [10, 100]);
 
         return $datatables->eloquent($query)
                           ->addColumn('title', function (User $user) {
