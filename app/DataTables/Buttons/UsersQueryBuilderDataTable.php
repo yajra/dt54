@@ -1,11 +1,11 @@
 <?php
 
-namespace App\DataTables;
+namespace App\DataTables\Buttons;
 
-use App\User;
+use Illuminate\Support\Facades\DB;
 use Yajra\Datatables\Services\DataTable;
 
-class UsersDataTable extends DataTable
+class UsersQueryBuilderDataTable extends DataTable
 {
     /**
      * Build DataTable class.
@@ -15,18 +15,18 @@ class UsersDataTable extends DataTable
     public function dataTable()
     {
         return $this->datatables
-            ->eloquent($this->query())
+            ->queryBuilder($this->query())
             ->addColumn('action', 'eloquent.tables.users-action');
     }
 
     /**
      * Get the query object to be processed by dataTables.
      *
-     * @return mixed
+     * @return \Illuminate\Database\Eloquent\Builder|\Illuminate\Database\Query\Builder|\Illuminate\Support\Collection
      */
     public function query()
     {
-        $query = User::query();
+        $query = DB::table('users');
 
         return $this->applyScopes($query);
     }

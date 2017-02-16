@@ -2,10 +2,10 @@
 
 namespace App\DataTables;
 
-use App\User;
+use App\Post;
 use Yajra\Datatables\Services\DataTable;
 
-class UsersDataTable extends DataTable
+class PostsDataTable extends DataTable
 {
     /**
      * Build DataTable class.
@@ -16,17 +16,17 @@ class UsersDataTable extends DataTable
     {
         return $this->datatables
             ->eloquent($this->query())
-            ->addColumn('action', 'eloquent.tables.users-action');
+            ->addColumn('action', 'path.to.action.view');
     }
 
     /**
      * Get the query object to be processed by dataTables.
      *
-     * @return mixed
+     * @return \Illuminate\Database\Eloquent\Builder|\Illuminate\Database\Query\Builder|\Illuminate\Support\Collection
      */
     public function query()
     {
-        $query = User::query();
+        $query = Post::query();
 
         return $this->applyScopes($query);
     }
@@ -54,8 +54,7 @@ class UsersDataTable extends DataTable
     {
         return [
             'id',
-            'name',
-            'email',
+            // add your columns
             'created_at',
             'updated_at',
         ];
@@ -68,6 +67,6 @@ class UsersDataTable extends DataTable
      */
     protected function filename()
     {
-        return 'users_' . time();
+        return 'posts_' . time();
     }
 }
