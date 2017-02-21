@@ -13,7 +13,8 @@
         "league/fractal": "^0.15.0",
         "yajra/laravel-datatables-buttons": "1.*",
         "yajra/laravel-datatables-html": "1.*",
-        "yajra/laravel-datatables-oracle": "7.*"
+        "yajra/laravel-datatables-oracle": "7.*",
+        "yajra/laravel-disqus": "^1.0"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
