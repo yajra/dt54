@@ -2580,16 +2580,16 @@
         },
         {
             "name": "yajra/laravel-datatables-oracle",
-            "version": "v7.5.1",
+            "version": "v7.5.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/yajra/laravel-datatables.git",
-                "reference": "87c0e1e9baa32e9deb9c6603c048a74e7e2f0c19"
+                "reference": "c61d36a1e7002c08088babcc774413708734658a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yajra/laravel-datatables/zipball/87c0e1e9baa32e9deb9c6603c048a74e7e2f0c19",
-                "reference": "87c0e1e9baa32e9deb9c6603c048a74e7e2f0c19",
+                "url": "https://api.github.com/repos/yajra/laravel-datatables/zipball/c61d36a1e7002c08088babcc774413708734658a",
+                "reference": "c61d36a1e7002c08088babcc774413708734658a",
                 "shasum": ""
             },
             "require": {
@@ -2637,7 +2637,7 @@
                 "jquery",
                 "laravel"
             ],
-            "time": "2017-05-26 05:51:51"
+            "time": "2017-05-26 08:30:24"
         },
         {
             "name": "yajra/laravel-disqus",
