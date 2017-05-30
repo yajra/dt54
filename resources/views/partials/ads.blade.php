@@ -1,3 +1,4 @@
+@if(env('ADS_CLIENT'))
 <!-- DT Ads -->
 <div class="panel panel-default">
     <div class="panel-body">
@@ -15,3 +16,4 @@
     (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
 @endpush
+@endif
