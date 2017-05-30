@@ -35,8 +35,10 @@
                     <ul class="menu">
                         @yield('side-menu')
                     </ul>
+                    @include('partials.ads')
                 </div>
                 <div class="col-sm-9">
+                    @include('partials.ads')
                     @yield('content')
                 </div>
             </div>
