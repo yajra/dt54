@@ -26,9 +26,14 @@ class ArrayResponseController extends Controller
      */
     public function data(Datatables $datatables)
     {
-        return $datatables->eloquent(User::select('id', 'name', 'email', 'created_at', 'updated_at'))
+        $builder = User::query()->select('id', 'name', 'email', 'created_at', 'updated_at');
+
+        return $datatables->eloquent($builder)
+                          ->editColumn('name', function ($user) {
+                              return '<a>' . $user->name . '</a>';
+                          })
                           ->addColumn('action', 'eloquent.tables.users-action')
-                          ->rawColumns([5])
+                          ->rawColumns([1, 5])
                           ->make();
     }
 }

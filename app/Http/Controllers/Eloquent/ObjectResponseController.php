@@ -27,7 +27,11 @@ class ObjectResponseController extends Controller
     public function data(Datatables $datatables)
     {
         return $datatables->eloquent(User::query())
+                          ->editColumn('name', function ($user) {
+                              return '<a>' . $user->name . '</a>';
+                          })
                           ->addColumn('action', 'eloquent.tables.users-action')
+                          ->rawColumns(['name', 'action'])
                           ->make(true);
     }
 }
